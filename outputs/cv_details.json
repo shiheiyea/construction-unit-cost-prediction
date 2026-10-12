@@ -1,0 +1,794 @@
+[
+  {
+    "scenario": "early",
+    "model": "RandomForest",
+    "fold": 1,
+    "validation_excel_rows": [
+      4,
+      6,
+      11,
+      22
+    ],
+    "best_params": {
+      "model__max_depth": 2,
+      "model__min_samples_leaf": 2
+    },
+    "inner_MAE": 892.5434872252139,
+    "validation_MAE": 508.7003171258708
+  },
+  {
+    "scenario": "early",
+    "model": "XGBoost",
+    "fold": 1,
+    "validation_excel_rows": [
+      4,
+      6,
+      11,
+      22
+    ],
+    "best_params": {
+      "model__learning_rate": 0.08,
+      "model__max_depth": 2
+    },
+    "inner_MAE": 858.1841169084822,
+    "validation_MAE": 653.2852783203125
+  },
+  {
+    "scenario": "early",
+    "model": "GLM_Gamma",
+    "fold": 1,
+    "validation_excel_rows": [
+      4,
+      6,
+      11,
+      22
+    ],
+    "best_params": {
+      "model__alpha": 0.1
+    },
+    "inner_MAE": 789.5429729594792,
+    "validation_MAE": 409.9866851477607
+  },
+  {
+    "scenario": "early",
+    "model": "Stacking",
+    "fold": 1,
+    "validation_excel_rows": [
+      4,
+      6,
+      11,
+      22
+    ],
+    "best_params": {
+      "final_estimator__ridge__alpha": 10
+    },
+    "inner_MAE": 1064.8742774195891,
+    "validation_MAE": 608.445223012495
+  },
+  {
+    "scenario": "early",
+    "model": "RandomForest",
+    "fold": 2,
+    "validation_excel_rows": [
+      8,
+      9,
+      13,
+      15
+    ],
+    "best_params": {
+      "model__max_depth": 2,
+      "model__min_samples_leaf": 2
+    },
+    "inner_MAE": 829.6583876630062,
+    "validation_MAE": 565.7863627934566
+  },
+  {
+    "scenario": "early",
+    "model": "XGBoost",
+    "fold": 2,
+    "validation_excel_rows": [
+      8,
+      9,
+      13,
+      15
+    ],
+    "best_params": {
+      "model__learning_rate": 0.08,
+      "model__max_depth": 2
+    },
+    "inner_MAE": 836.0189239986358,
+    "validation_MAE": 574.9868774414062
+  },
+  {
+    "scenario": "early",
+    "model": "GLM_Gamma",
+    "fold": 2,
+    "validation_excel_rows": [
+      8,
+      9,
+      13,
+      15
+    ],
+    "best_params": {
+      "model__alpha": 1
+    },
+    "inner_MAE": 883.1167309163247,
+    "validation_MAE": 514.9056980853279
+  },
+  {
+    "scenario": "early",
+    "model": "Stacking",
+    "fold": 2,
+    "validation_excel_rows": [
+      8,
+      9,
+      13,
+      15
+    ],
+    "best_params": {
+      "final_estimator__ridge__alpha": 10
+    },
+    "inner_MAE": 953.4454091694324,
+    "validation_MAE": 721.4590858763283
+  },
+  {
+    "scenario": "early",
+    "model": "RandomForest",
+    "fold": 3,
+    "validation_excel_rows": [
+      5,
+      7,
+      10,
+      25
+    ],
+    "best_params": {
+      "model__max_depth": 2,
+      "model__min_samples_leaf": 2
+    },
+    "inner_MAE": 782.0380560017214,
+    "validation_MAE": 1054.4673329274904
+  },
+  {
+    "scenario": "early",
+    "model": "XGBoost",
+    "fold": 3,
+    "validation_excel_rows": [
+      5,
+      7,
+      10,
+      25
+    ],
+    "best_params": {
+      "model__learning_rate": 0.08,
+      "model__max_depth": 2
+    },
+    "inner_MAE": 729.2020930214534,
+    "validation_MAE": 828.053955078125
+  },
+  {
+    "scenario": "early",
+    "model": "GLM_Gamma",
+    "fold": 3,
+    "validation_excel_rows": [
+      5,
+      7,
+      10,
+      25
+    ],
+    "best_params": {
+      "model__alpha": 1
+    },
+    "inner_MAE": 671.2093051246643,
+    "validation_MAE": 930.895937905984
+  },
+  {
+    "scenario": "early",
+    "model": "Stacking",
+    "fold": 3,
+    "validation_excel_rows": [
+      5,
+      7,
+      10,
+      25
+    ],
+    "best_params": {
+      "final_estimator__ridge__alpha": 1
+    },
+    "inner_MAE": 811.5082297372104,
+    "validation_MAE": 857.145044485409
+  },
+  {
+    "scenario": "early",
+    "model": "RandomForest",
+    "fold": 4,
+    "validation_excel_rows": [
+      3,
+      12,
+      20,
+      23
+    ],
+    "best_params": {
+      "model__max_depth": 4,
+      "model__min_samples_leaf": 2
+    },
+    "inner_MAE": 682.3201353248087,
+    "validation_MAE": 1127.1150028108468
+  },
+  {
+    "scenario": "early",
+    "model": "XGBoost",
+    "fold": 4,
+    "validation_excel_rows": [
+      3,
+      12,
+      20,
+      23
+    ],
+    "best_params": {
+      "model__learning_rate": 0.08,
+      "model__max_depth": 2
+    },
+    "inner_MAE": 696.8592215401785,
+    "validation_MAE": 1333.9485473632812
+  },
+  {
+    "scenario": "early",
+    "model": "GLM_Gamma",
+    "fold": 4,
+    "validation_excel_rows": [
+      3,
+      12,
+      20,
+      23
+    ],
+    "best_params": {
+      "model__alpha": 1
+    },
+    "inner_MAE": 707.4706914559653,
+    "validation_MAE": 772.9174488302192
+  },
+  {
+    "scenario": "early",
+    "model": "Stacking",
+    "fold": 4,
+    "validation_excel_rows": [
+      3,
+      12,
+      20,
+      23
+    ],
+    "best_params": {
+      "final_estimator__ridge__alpha": 10
+    },
+    "inner_MAE": 861.3234650169419,
+    "validation_MAE": 878.723757761136
+  },
+  {
+    "scenario": "early",
+    "model": "RandomForest",
+    "fold": 5,
+    "validation_excel_rows": [
+      14,
+      19,
+      21,
+      24
+    ],
+    "best_params": {
+      "model__max_depth": 4,
+      "model__min_samples_leaf": 2
+    },
+    "inner_MAE": 806.5886403481142,
+    "validation_MAE": 1080.3143603670642
+  },
+  {
+    "scenario": "early",
+    "model": "XGBoost",
+    "fold": 5,
+    "validation_excel_rows": [
+      14,
+      19,
+      21,
+      24
+    ],
+    "best_params": {
+      "model__learning_rate": 0.08,
+      "model__max_depth": 2
+    },
+    "inner_MAE": 812.9542414589533,
+    "validation_MAE": 870.2084716796876
+  },
+  {
+    "scenario": "early",
+    "model": "GLM_Gamma",
+    "fold": 5,
+    "validation_excel_rows": [
+      14,
+      19,
+      21,
+      24
+    ],
+    "best_params": {
+      "model__alpha": 1
+    },
+    "inner_MAE": 855.6453220078157,
+    "validation_MAE": 810.632960039758
+  },
+  {
+    "scenario": "early",
+    "model": "Stacking",
+    "fold": 5,
+    "validation_excel_rows": [
+      14,
+      19,
+      21,
+      24
+    ],
+    "best_params": {
+      "final_estimator__ridge__alpha": 10
+    },
+    "inner_MAE": 1096.4443812756597,
+    "validation_MAE": 748.3285412035515
+  },
+  {
+    "scenario": "early",
+    "model": "RandomForest",
+    "fold": 6,
+    "validation_excel_rows": [
+      16,
+      17,
+      18,
+      26
+    ],
+    "best_params": {
+      "model__max_depth": 2,
+      "model__min_samples_leaf": 2
+    },
+    "inner_MAE": 998.2518154814401,
+    "validation_MAE": 692.9803564895753
+  },
+  {
+    "scenario": "early",
+    "model": "XGBoost",
+    "fold": 6,
+    "validation_excel_rows": [
+      16,
+      17,
+      18,
+      26
+    ],
+    "best_params": {
+      "model__learning_rate": 0.08,
+      "model__max_depth": 1
+    },
+    "inner_MAE": 1002.1778878348214,
+    "validation_MAE": 757.2619750976562
+  },
+  {
+    "scenario": "early",
+    "model": "GLM_Gamma",
+    "fold": 6,
+    "validation_excel_rows": [
+      16,
+      17,
+      18,
+      26
+    ],
+    "best_params": {
+      "model__alpha": 0.1
+    },
+    "inner_MAE": 906.7264601691862,
+    "validation_MAE": 610.9563579206451
+  },
+  {
+    "scenario": "early",
+    "model": "Stacking",
+    "fold": 6,
+    "validation_excel_rows": [
+      16,
+      17,
+      18,
+      26
+    ],
+    "best_params": {
+      "final_estimator__ridge__alpha": 10
+    },
+    "inner_MAE": 1042.098144285744,
+    "validation_MAE": 737.4820197445894
+  },
+  {
+    "scenario": "detailed",
+    "model": "RandomForest",
+    "fold": 1,
+    "validation_excel_rows": [
+      4,
+      6,
+      11,
+      22
+    ],
+    "best_params": {
+      "model__max_depth": 2,
+      "model__min_samples_leaf": 2
+    },
+    "inner_MAE": 863.3294825837742,
+    "validation_MAE": 690.1138180977016
+  },
+  {
+    "scenario": "detailed",
+    "model": "XGBoost",
+    "fold": 1,
+    "validation_excel_rows": [
+      4,
+      6,
+      11,
+      22
+    ],
+    "best_params": {
+      "model__learning_rate": 0.08,
+      "model__max_depth": 2
+    },
+    "inner_MAE": 728.3900212363592,
+    "validation_MAE": 602.6505126953125
+  },
+  {
+    "scenario": "detailed",
+    "model": "GLM_Gamma",
+    "fold": 1,
+    "validation_excel_rows": [
+      4,
+      6,
+      11,
+      22
+    ],
+    "best_params": {
+      "model__alpha": 1
+    },
+    "inner_MAE": 1092.217643344458,
+    "validation_MAE": 739.1300513113301
+  },
+  {
+    "scenario": "detailed",
+    "model": "Stacking",
+    "fold": 1,
+    "validation_excel_rows": [
+      4,
+      6,
+      11,
+      22
+    ],
+    "best_params": {
+      "final_estimator__ridge__alpha": 10
+    },
+    "inner_MAE": 969.7976263094205,
+    "validation_MAE": 876.5257882963226
+  },
+  {
+    "scenario": "detailed",
+    "model": "RandomForest",
+    "fold": 2,
+    "validation_excel_rows": [
+      8,
+      9,
+      13,
+      15
+    ],
+    "best_params": {
+      "model__max_depth": 4,
+      "model__min_samples_leaf": 2
+    },
+    "inner_MAE": 894.3349727340014,
+    "validation_MAE": 899.0080090939148
+  },
+  {
+    "scenario": "detailed",
+    "model": "XGBoost",
+    "fold": 2,
+    "validation_excel_rows": [
+      8,
+      9,
+      13,
+      15
+    ],
+    "best_params": {
+      "model__learning_rate": 0.08,
+      "model__max_depth": 2
+    },
+    "inner_MAE": 869.0634327721974,
+    "validation_MAE": 464.266845703125
+  },
+  {
+    "scenario": "detailed",
+    "model": "GLM_Gamma",
+    "fold": 2,
+    "validation_excel_rows": [
+      8,
+      9,
+      13,
+      15
+    ],
+    "best_params": {
+      "model__alpha": 0.1
+    },
+    "inner_MAE": 996.2941855264556,
+    "validation_MAE": 1054.3931761352778
+  },
+  {
+    "scenario": "detailed",
+    "model": "Stacking",
+    "fold": 2,
+    "validation_excel_rows": [
+      8,
+      9,
+      13,
+      15
+    ],
+    "best_params": {
+      "final_estimator__ridge__alpha": 100
+    },
+    "inner_MAE": 1079.6276675805714,
+    "validation_MAE": 1255.5639716375663
+  },
+  {
+    "scenario": "detailed",
+    "model": "RandomForest",
+    "fold": 3,
+    "validation_excel_rows": [
+      5,
+      7,
+      10,
+      25
+    ],
+    "best_params": {
+      "model__max_depth": 4,
+      "model__min_samples_leaf": 2
+    },
+    "inner_MAE": 727.2411546569243,
+    "validation_MAE": 1185.0119407242062
+  },
+  {
+    "scenario": "detailed",
+    "model": "XGBoost",
+    "fold": 3,
+    "validation_excel_rows": [
+      5,
+      7,
+      10,
+      25
+    ],
+    "best_params": {
+      "model__learning_rate": 0.08,
+      "model__max_depth": 1
+    },
+    "inner_MAE": 646.7450823102678,
+    "validation_MAE": 889.1280517578125
+  },
+  {
+    "scenario": "detailed",
+    "model": "GLM_Gamma",
+    "fold": 3,
+    "validation_excel_rows": [
+      5,
+      7,
+      10,
+      25
+    ],
+    "best_params": {
+      "model__alpha": 10
+    },
+    "inner_MAE": 969.1123037893225,
+    "validation_MAE": 1458.861637892013
+  },
+  {
+    "scenario": "detailed",
+    "model": "Stacking",
+    "fold": 3,
+    "validation_excel_rows": [
+      5,
+      7,
+      10,
+      25
+    ],
+    "best_params": {
+      "final_estimator__ridge__alpha": 10
+    },
+    "inner_MAE": 984.6823236727918,
+    "validation_MAE": 1320.2021557219173
+  },
+  {
+    "scenario": "detailed",
+    "model": "RandomForest",
+    "fold": 4,
+    "validation_excel_rows": [
+      3,
+      12,
+      20,
+      23
+    ],
+    "best_params": {
+      "model__max_depth": 2,
+      "model__min_samples_leaf": 2
+    },
+    "inner_MAE": 807.0387644269126,
+    "validation_MAE": 954.7803482443481
+  },
+  {
+    "scenario": "detailed",
+    "model": "XGBoost",
+    "fold": 4,
+    "validation_excel_rows": [
+      3,
+      12,
+      20,
+      23
+    ],
+    "best_params": {
+      "model__learning_rate": 0.08,
+      "model__max_depth": 2
+    },
+    "inner_MAE": 627.7144914899553,
+    "validation_MAE": 988.1756591796875
+  },
+  {
+    "scenario": "detailed",
+    "model": "GLM_Gamma",
+    "fold": 4,
+    "validation_excel_rows": [
+      3,
+      12,
+      20,
+      23
+    ],
+    "best_params": {
+      "model__alpha": 1
+    },
+    "inner_MAE": 775.3593100591671,
+    "validation_MAE": 964.4269344433455
+  },
+  {
+    "scenario": "detailed",
+    "model": "Stacking",
+    "fold": 4,
+    "validation_excel_rows": [
+      3,
+      12,
+      20,
+      23
+    ],
+    "best_params": {
+      "final_estimator__ridge__alpha": 100
+    },
+    "inner_MAE": 1176.4910226409684,
+    "validation_MAE": 871.1856778019527
+  },
+  {
+    "scenario": "detailed",
+    "model": "RandomForest",
+    "fold": 5,
+    "validation_excel_rows": [
+      14,
+      19,
+      21,
+      24
+    ],
+    "best_params": {
+      "model__max_depth": 2,
+      "model__min_samples_leaf": 2
+    },
+    "inner_MAE": 968.4421130348742,
+    "validation_MAE": 835.2419591071549
+  },
+  {
+    "scenario": "detailed",
+    "model": "XGBoost",
+    "fold": 5,
+    "validation_excel_rows": [
+      14,
+      19,
+      21,
+      24
+    ],
+    "best_params": {
+      "model__learning_rate": 0.08,
+      "model__max_depth": 2
+    },
+    "inner_MAE": 962.1099024212549,
+    "validation_MAE": 851.0402587890626
+  },
+  {
+    "scenario": "detailed",
+    "model": "GLM_Gamma",
+    "fold": 5,
+    "validation_excel_rows": [
+      14,
+      19,
+      21,
+      24
+    ],
+    "best_params": {
+      "model__alpha": 0.1
+    },
+    "inner_MAE": 865.8727317104368,
+    "validation_MAE": 1159.7489448202073
+  },
+  {
+    "scenario": "detailed",
+    "model": "Stacking",
+    "fold": 5,
+    "validation_excel_rows": [
+      14,
+      19,
+      21,
+      24
+    ],
+    "best_params": {
+      "final_estimator__ridge__alpha": 10
+    },
+    "inner_MAE": 1127.6304554963024,
+    "validation_MAE": 812.104091184073
+  },
+  {
+    "scenario": "detailed",
+    "model": "RandomForest",
+    "fold": 6,
+    "validation_excel_rows": [
+      16,
+      17,
+      18,
+      26
+    ],
+    "best_params": {
+      "model__max_depth": 2,
+      "model__min_samples_leaf": 2
+    },
+    "inner_MAE": 1119.3343672472074,
+    "validation_MAE": 665.4134215518279
+  },
+  {
+    "scenario": "detailed",
+    "model": "XGBoost",
+    "fold": 6,
+    "validation_excel_rows": [
+      16,
+      17,
+      18,
+      26
+    ],
+    "best_params": {
+      "model__learning_rate": 0.03,
+      "model__max_depth": 2
+    },
+    "inner_MAE": 1255.3295224144347,
+    "validation_MAE": 478.8265258789063
+  },
+  {
+    "scenario": "detailed",
+    "model": "GLM_Gamma",
+    "fold": 6,
+    "validation_excel_rows": [
+      16,
+      17,
+      18,
+      26
+    ],
+    "best_params": {
+      "model__alpha": 0.1
+    },
+    "inner_MAE": 1231.3015967118351,
+    "validation_MAE": 1180.463623390864
+  },
+  {
+    "scenario": "detailed",
+    "model": "Stacking",
+    "fold": 6,
+    "validation_excel_rows": [
+      16,
+      17,
+      18,
+      26
+    ],
+    "best_params": {
+      "final_estimator__ridge__alpha": 100
+    },
+    "inner_MAE": 1278.731210452789,
+    "validation_MAE": 890.0250562197787
+  }
+]

@@ -1,0 +1,121 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>单方造价模型对比</title>
+    <style>body{font:16px/1.7 "Microsoft YaHei",sans-serif;max-width:1100px;margin:36px auto;padding:0 24px;color:#243447}h1,h2{color:#17435a}table{border-collapse:collapse;width:100%;font-size:14px}td,th{padding:9px;border-bottom:1px solid #dce3ea;text-align:right}th{background:#edf4f7}img{width:100%}.note{background:#edf4f7;padding:16px;border-radius:8px}code{background:#eee;padding:2px 4px}</style>
+    <h1>单方造价模型对比</h1>
+    <p>24 个有标签项目，两种预测场景，四种回归模型及均值基准。主指标 MAE 越低越好，R² 越高越好。</p>
+    <p class="note">外层 6 折、每折 4 个验证样本；内层 3 折按 MAE 选参数。以下指标汇总全部 24 个折外预测，每个项目只作一次外层验证。没有额外独立测试集，当前结果用于探索性比较，模型选择后的部署误差仍需新增项目检验。</p>
+    <h2>验证结果</h2><table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>场景</th>
+      <th>模型</th>
+      <th>MAE</th>
+      <th>RMSE</th>
+      <th>MAPE (%)</th>
+      <th>R2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>项目特征＋分项价格</td>
+      <td>XGBoost</td>
+      <td>712.348</td>
+      <td>857.779</td>
+      <td>21.230</td>
+      <td>0.541</td>
+    </tr>
+    <tr>
+      <td>项目特征＋分项价格</td>
+      <td>RandomForest</td>
+      <td>871.595</td>
+      <td>1015.620</td>
+      <td>27.133</td>
+      <td>0.357</td>
+    </tr>
+    <tr>
+      <td>项目特征＋分项价格</td>
+      <td>Stacking</td>
+      <td>1004.268</td>
+      <td>1134.908</td>
+      <td>32.993</td>
+      <td>0.197</td>
+    </tr>
+    <tr>
+      <td>项目特征＋分项价格</td>
+      <td>GLM_Gamma</td>
+      <td>1092.837</td>
+      <td>1234.479</td>
+      <td>33.493</td>
+      <td>0.050</td>
+    </tr>
+    <tr>
+      <td>项目特征＋分项价格</td>
+      <td>MeanBaseline</td>
+      <td>1196.621</td>
+      <td>1312.603</td>
+      <td>39.490</td>
+      <td>-0.074</td>
+    </tr>
+    <tr>
+      <td>项目特征</td>
+      <td>GLM_Gamma</td>
+      <td>675.049</td>
+      <td>840.135</td>
+      <td>22.547</td>
+      <td>0.560</td>
+    </tr>
+    <tr>
+      <td>项目特征</td>
+      <td>Stacking</td>
+      <td>758.597</td>
+      <td>930.643</td>
+      <td>27.501</td>
+      <td>0.460</td>
+    </tr>
+    <tr>
+      <td>项目特征</td>
+      <td>XGBoost</td>
+      <td>836.291</td>
+      <td>1089.600</td>
+      <td>28.432</td>
+      <td>0.260</td>
+    </tr>
+    <tr>
+      <td>项目特征</td>
+      <td>RandomForest</td>
+      <td>838.227</td>
+      <td>1056.140</td>
+      <td>27.291</td>
+      <td>0.305</td>
+    </tr>
+    <tr>
+      <td>项目特征</td>
+      <td>MeanBaseline</td>
+      <td>1196.621</td>
+      <td>1312.603</td>
+      <td>39.490</td>
+      <td>-0.074</td>
+    </tr>
+  </tbody>
+</table><img src="model_comparison.png" alt="MAE 对比"><img src="oof_predictions.png" alt="折外预测对比"><h2>数据与方法</h2><ul>
+    <li>早期场景：18 个面积、层数、高度、是否包含工程、结构和基础形式字段。详细场景：另加 25 个分项价格，共 43 个 X。</li>
+    <li>项目名称仅作标识，不进入模型。原表结构、基础形式等已经是 0/1 独热编码，本次数据没有额外文字类别 X；管道支持新增文字类别的独热编码和未知类别处理。</li>
+    <li>数值缺失值按训练折中位数填补，所有数值 X 使用训练折均值和标准差做 Z-score 标准化，含现有 0/1 字段。y 保留原始单位。</li>
+    <li>GLM 使用 Gamma 分布、log 链接及 L2 正则化，预测值为正。Stacking 用 RF、XGBoost、GLM 的内部折外预测训练标准化＋Ridge 元模型，基学习器参数预先固定，元模型正则强度在内层选取。</li>
+    <li>没有删除异常价格、没有合成样本；经济指标中的零保持原值。单方造价单位假定为元/m²，原表该列未标单位。</li>
+    <li>详细模型要求预测时分项价格确实可得。同一项目重复记录、同源项目关联和未来时间漂移需更多元数据才能评估。</li>
+    <li>表1采用两行表头重建列名；最后一条只有项目名称、没有 y 的记录排除。Sheet1 是不完整草稿，Sheet2 是 8 条住宅数据，字段不同，均未混入训练。</li>
+    </ul><h2>数据检查</h2><pre>{
+  &quot;excluded_without_target&quot;: [
+    {
+      &quot;Excel行号&quot;: 27,
+      &quot;项目名称&quot;: &quot;广州办公楼1.17&quot;
+    }
+  ],
+  &quot;area_issues_preserved&quot;: [
+    {
+      &quot;Excel行号&quot;: 20,
+      &quot;项目名称&quot;: &quot;广州商住楼&quot;,
+      &quot;总面积减地上地下面积&quot;: -0.6799999999966531
+    }
+  ]
+}</pre><p>面积不一致处保留原值，不自动更改。模型已用全部 24 个有效样本重训并保存，使用方法见项目 README。</p></html>

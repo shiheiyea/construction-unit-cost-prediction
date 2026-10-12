@@ -1,0 +1,143 @@
+{
+  "source_sha256": "eed35e12d47785cf9697d9687870efaffeafaf7cb19605660236915465f176a3",
+  "seed": 20261012,
+  "outer_cv": 6,
+  "inner_cv": 3,
+  "stacking_cv": 3,
+  "target": "单方造价",
+  "target_unit": "假定元/m²，原表单方造价列未标单位",
+  "sample_count": 24,
+  "glm": "Gamma/log",
+  "selection_metric": "outer OOF MAE",
+  "scenarios": {
+    "early": {
+      "label": "项目特征",
+      "features": [
+        "总建筑面积（m²）",
+        "地上建筑面积（m²）",
+        "地下建筑面积（m²）",
+        "地下层数层）",
+        "地上层数(层）",
+        "总高度（m)",
+        "是否含支护",
+        "是否含电梯工程",
+        "是否装配式",
+        "结构-框剪",
+        "结构-框架",
+        "是否含暖通工程",
+        "是否含智能化工程",
+        "是否含幕墙",
+        "基础形式-桩基础",
+        "基础形式-独立基础",
+        "基础形式-满堂基础",
+        "基础形式-桩基础+筏板基础"
+      ],
+      "models": {
+        "RandomForest": {
+          "file": "models/early_RandomForest.joblib",
+          "params": {
+            "model__max_depth": 4,
+            "model__min_samples_leaf": 2
+          }
+        },
+        "XGBoost": {
+          "file": "models/early_XGBoost.joblib",
+          "params": {
+            "model__learning_rate": 0.08,
+            "model__max_depth": 1
+          }
+        },
+        "GLM_Gamma": {
+          "file": "models/early_GLM_Gamma.joblib",
+          "params": {
+            "model__alpha": 1
+          }
+        },
+        "Stacking": {
+          "file": "models/early_Stacking.joblib",
+          "params": {
+            "final_estimator__ridge__alpha": 1
+          }
+        }
+      },
+      "recommended_model": "GLM_Gamma"
+    },
+    "detailed": {
+      "label": "项目特征＋分项价格",
+      "features": [
+        "总建筑面积（m²）",
+        "地上建筑面积（m²）",
+        "地下建筑面积（m²）",
+        "地下层数层）",
+        "地上层数(层）",
+        "总高度（m)",
+        "是否含支护",
+        "是否含电梯工程",
+        "是否装配式",
+        "结构-框剪",
+        "结构-框架",
+        "是否含暖通工程",
+        "是否含智能化工程",
+        "是否含幕墙",
+        "基础形式-桩基础",
+        "基础形式-独立基础",
+        "基础形式-满堂基础",
+        "基础形式-桩基础+筏板基础",
+        "基础（元/m³）",
+        "柱（元/m³）",
+        "梁（元/m³）",
+        "混凝土墙（元/m³）",
+        "板（元/m³）",
+        "楼梯（元/m²）",
+        "钢筋（元/t）",
+        "屋面及保温工程",
+        "防水（元/m²）",
+        "模板（元/m²）",
+        "综合脚手架（元/m²）",
+        "里脚手架（元/m²）",
+        "满堂脚手架（元/m²）",
+        "地面石材装饰（元/m²）",
+        "地面块料装饰（元/m²）",
+        "地板装饰（元/m²）",
+        "楼梯石材装饰工程（元/m²）",
+        "楼梯块料装饰工程（元/m²）",
+        "墙柱面抹灰装饰（元/m²）",
+        "墙柱面石材装饰（元/m²）",
+        "墙柱面块料装饰（元/m²）",
+        "墙柱面涂料装饰（元/m²）",
+        "天棚抹灰（元/m²）",
+        "天棚吊顶（元/m²）",
+        "天棚涂料（元/m²）"
+      ],
+      "models": {
+        "RandomForest": {
+          "file": "models/detailed_RandomForest.joblib",
+          "params": {
+            "model__max_depth": 2,
+            "model__min_samples_leaf": 4
+          }
+        },
+        "XGBoost": {
+          "file": "models/detailed_XGBoost.joblib",
+          "params": {
+            "model__learning_rate": 0.03,
+            "model__max_depth": 1
+          }
+        },
+        "GLM_Gamma": {
+          "file": "models/detailed_GLM_Gamma.joblib",
+          "params": {
+            "model__alpha": 0.1
+          }
+        },
+        "Stacking": {
+          "file": "models/detailed_Stacking.joblib",
+          "params": {
+            "final_estimator__ridge__alpha": 10
+          }
+        }
+      },
+      "recommended_model": "XGBoost"
+    }
+  }
+}
